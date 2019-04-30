@@ -1,0 +1,23 @@
+{
+  "model": {
+    "attributes": {
+      "userFields": [
+        "id",
+        "email",
+        "username",
+        "createdAt",
+        "updatedAt"
+      ],
+      "locationFields": [
+        "id",
+        "country",
+        "address",
+        "latitude",
+        "longitude",
+        "googleId",
+        "createdAt",
+        "updatedAt"
+      ]
+    }
+  }
+}

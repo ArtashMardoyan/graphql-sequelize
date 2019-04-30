@@ -1,0 +1,11 @@
+{
+  "requiredEnvironment": [
+    "PORT",
+    "RDS_HOST",
+    "RDS_DB",
+    "RDS_USERNAME",
+    "RDS_PASSWORD",
+    "RDS_DIALECT",
+    "RDS_LOGGING"
+  ]
+}
