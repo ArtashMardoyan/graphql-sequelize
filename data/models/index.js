@@ -1,11 +1,11 @@
 'use strict';
 
-import fs from 'fs';
-import pg from 'pg';
-import path from 'path';
-import Sequelize from 'sequelize';
+const fs = require('fs');
+const pg = require('pg');
+const path = require('path');
+const Sequelize = require('sequelize');
 
-import config from '../../config';
+const config = require('../../config');
 
 const basename = path.basename(__filename);
 const models = {};

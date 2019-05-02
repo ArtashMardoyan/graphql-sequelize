@@ -1,13 +1,13 @@
 'use strict';
 
-import path from 'path';
-import express from 'express';
-import bodyParser from 'body-parser';
-import { makeExecutableSchema } from 'graphql-tools';
-import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
-import { fileLoader, mergeTypes, mergeResolvers } from 'merge-graphql-schemas';
+const path = require('path');
+const express = require('express');
+const bodyParser = require('body-parser');
+const { makeExecutableSchema } = require('graphql-tools');
+const { graphqlExpress, graphiqlExpress } = require('apollo-server-express');
+const { fileLoader, mergeTypes, mergeResolvers } = require('merge-graphql-schemas');
 
-import config from './config';
+const config = require('./config');
 
 const typeDefs = mergeTypes(fileLoader(path.join(__dirname, './data/schemas')));
 const resolvers = mergeResolvers(fileLoader(path.join(__dirname, './resolvers')));
