@@ -1,6 +1,6 @@
 'use strict';
 
-import { User } from '../data/models';
+const { User } = require('../data/models');
 
 module.exports = {
     Query: {
