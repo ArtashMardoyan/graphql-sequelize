@@ -1,10 +1,8 @@
 'use strict';
 
-import path from 'path';
-import config from 'nconf';
-import dotenv from 'dotenv';
-
-dotenv.config();
+require('dotenv').config();
+const path = require('path');
+const config = require('nconf');
 
 config.argv().env();
 

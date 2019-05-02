@@ -4,6 +4,11 @@ module.exports = (sequelize, DataTypes) => {
     const Location = sequelize.define(
         'Location',
         {
+            id: {
+                primaryKey: true,
+                type: DataTypes.UUID,
+                defaultValue: DataTypes.UUIDV4
+            },
             country: {
                 type: DataTypes.STRING
             },
@@ -16,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
             address: {
                 type: DataTypes.STRING
             },
-            googleId: {
+            zipCode: {
                 type: DataTypes.STRING
             }
         },

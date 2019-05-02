@@ -1,10 +1,10 @@
 'use strict';
 
-import _ from 'lodash';
-import uuid from 'uuid/v4';
-import bcrypt from 'bcrypt';
-import stream from 'stream';
-import randomString from 'randomstring';
+const _ = require('lodash');
+const uuid = require('uuid/v4');
+const bcrypt = require('bcrypt');
+const stream = require('stream');
+const randomString = require('randomstring');
 
 class Security {
     /**

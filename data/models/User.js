@@ -1,22 +1,63 @@
 'use strict';
 
-import config from '../../config';
+const config = require('../../config');
 
 module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define(
         'User',
         {
+            id: {
+                primaryKey: true,
+                type: DataTypes.UUID,
+                defaultValue: DataTypes.UUIDV4
+            },
             username: {
-                type: DataTypes.STRING,
-                unique: true
+                allowNull: false,
+                type: DataTypes.STRING(50),
+                validate: {
+                    len: [2, 50],
+                    is: /^[a-zA-Z0-9-_']+$/i
+                },
+                unique: {
+                    message: 'username.unique'
+                }
+            },
+            lastName: {
+                type: DataTypes.STRING(50),
+                validate: { len: [2, 50] }
+            },
+            firstName: {
+                type: DataTypes.STRING(50),
+                validate: { len: [2, 50] }
             },
             email: {
                 type: DataTypes.STRING,
-                unique: true
+                allowNull: false,
+                unique: {
+                    message: 'email.unique'
+                },
+                validate: {
+                    isEmail: true
+                }
             },
-            password: DataTypes.STRING
+            avatar: {
+                type: DataTypes.STRING
+            },
+            cover: {
+                type: DataTypes.STRING
+            },
+            password: {
+                allowNull: false,
+                type: DataTypes.STRING,
+                validate: {
+                    len: [6]
+                }
+            }
         },
-        { tableName: 'user', timestamps: true }
+        {
+            tableName: 'user',
+            timestamps: true
+        }
     );
 
     User.associate = models => {

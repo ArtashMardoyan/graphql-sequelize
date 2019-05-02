@@ -2,9 +2,11 @@
 
 module.exports = `
   type Location {
-    id: Int!
+    id: String!
     userId: User!
+    address: String!
     country: String!
+    zipCode: String!
     latitude: String!
     longitude: String!
     createdAt: String!
@@ -15,6 +17,12 @@ module.exports = `
     getLocations: [User!]!
   }
   type Mutation {
-    createLocation(country: String!): Location!
+    createLocation(
+       address: String!
+       country: String!
+       zipCode: String!
+       latitude: String!
+       longitude: String!
+    ): Location!
   }
 `;

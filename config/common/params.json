@@ -4,7 +4,11 @@
       "userFields": [
         "id",
         "email",
+        "cover",
+        "avatar",
         "username",
+        "firstName",
+        "lastName",
         "createdAt",
         "updatedAt"
       ],
@@ -12,9 +16,9 @@
         "id",
         "country",
         "address",
+        "zipCode",
         "latitude",
         "longitude",
-        "googleId",
         "createdAt",
         "updatedAt"
       ]

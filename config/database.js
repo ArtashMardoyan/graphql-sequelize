@@ -1,5 +1,5 @@
 'use strict';
 
-import config from './index';
+const config = require('./index');
 
 module.exports = config.get('db');

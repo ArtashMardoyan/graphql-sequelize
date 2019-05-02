@@ -16,28 +16,10 @@ module.exports = {
                     key: 'id'
                 }
             },
-            bookId: {
-                unique: true,
-                onDelete: 'CASCADE',
-                type: Sequelize.UUID,
-                references: {
-                    model: 'book',
-                    key: 'id'
-                }
-            },
-            publicationId: {
-                unique: true,
-                onDelete: 'CASCADE',
-                type: Sequelize.UUID,
-                references: {
-                    model: 'publication',
-                    key: 'id'
-                }
-            },
             country: {
                 type: Sequelize.STRING
             },
-            googleId: {
+            zipCode: {
                 type: Sequelize.STRING
             },
             address: {

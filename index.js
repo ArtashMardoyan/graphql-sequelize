@@ -7,10 +7,9 @@ import { makeExecutableSchema } from 'graphql-tools';
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
 import { fileLoader, mergeTypes, mergeResolvers } from 'merge-graphql-schemas';
 
-import models from './data/models';
 import config from './config';
 
-const typeDefs = mergeTypes(fileLoader(path.join(__dirname, './schemas')));
+const typeDefs = mergeTypes(fileLoader(path.join(__dirname, './data/schemas')));
 const resolvers = mergeResolvers(fileLoader(path.join(__dirname, './resolvers')));
 
 const schema = makeExecutableSchema({ typeDefs, resolvers });
@@ -31,7 +30,5 @@ app.use(
 
 app.use('/graphiql', graphiqlExpress({ endpointURL: graphqlEndpoint }));
 
-models.sequelize.sync({}).then(() => {
-    console.info(`Server is running on port : ${port}`);
-    app.listen(port);
-});
+console.info(`Server is running on port : ${port}`);
+app.listen(port);

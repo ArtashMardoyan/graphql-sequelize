@@ -3,6 +3,8 @@
 const _ = require('lodash');
 const faker = require('faker');
 
+const Security = require('../../components/Security');
+
 module.exports = {
     async up(queryInterface) {
         const userUUID = _.template('cf5ef2e7-b7da-41f9-af53-6ebc15a4ee<%= index %>');
@@ -30,7 +32,9 @@ module.exports = {
                 firstName,
                 createdAt,
                 updatedAt,
-                password: 'hunter' // hunter
+                password: 'hunter', // hunter
+                cover: faker.image.nature(),
+                avatar: faker.image.avatar()
             });
 
             locations.push({
@@ -39,26 +43,15 @@ module.exports = {
                 updatedAt,
                 id: Security.generateUuid(),
                 country: faker.address.country(),
+                zipCode: faker.address.zipCode(),
                 latitude: faker.address.latitude(),
-                longitude: faker.address.longitude()
-            });
-
-            controlSettings.push({
-                id: Security.generateUuid(),
-                userId,
-                createdAt: createdAt,
-                updatedAt: updatedAt
+                longitude: faker.address.longitude(),
+                address: faker.address.streetAddress()
             });
         }
 
         await queryInterface.bulkInsert('user', users, {});
-
-        await Promise.all([
-            queryInterface.bulkInsert('allow', allow, {}),
-            queryInterface.bulkInsert('media', medias, {}),
-            queryInterface.bulkInsert('location', locations, {}),
-            queryInterface.bulkInsert('controlSettings', controlSettings, {})
-        ]);
+        await queryInterface.bulkInsert('location', locations, {});
     },
 
     async down(queryInterface) {
