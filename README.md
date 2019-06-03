@@ -10,7 +10,7 @@ you need to have node installed in your OS
 
 ```
 node v10.8.0
-yarn v6.9.0
+yarn v1.16.0
 ```
 
 **install dependancies before using**
