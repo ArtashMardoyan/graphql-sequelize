@@ -1,8 +1,8 @@
-### GraphQL Architecture using Sequelize
+# GraphQL Architecture using Sequelize
 
-# This repository is an example of back end architecture using GraphQL API using Sequelize ORM.
+## This repository is an example of back end architecture using GraphQL API using Sequelize ORM.
 
-*main file is **index.js**
+* main file is **index.js**
 
 ## Prerequisites
 
@@ -16,6 +16,8 @@ yarn v1.16.0
 **install dependancies before using**
 
     yarn install
+
+
 
 **The repository consists of two models: User and Location, and their relation. Also, the CRUD of each of the models.**
 
