@@ -2,9 +2,24 @@
 
 # This repository is an example of back end architecture using GraphQL API using Sequelize ORM.
 
-    The repository consists of two models: User and Location, and their relation. Also, the CRUD of each of the models.
+*main file is **index.js**
 
-*below the image of user-location realtion*
+## Prerequisites
+
+you need to have node installed in your OS
+
+```
+node v10.8.0
+yarn v1.16.0
+```
+
+**install dependancies before using**
+
+    yarn install
+
+**The repository consists of two models: User and Location, and their relation. Also, the CRUD of each of the models.**
+
+*below the image of user-location relation*
 
 ![database schema](db_relation.png)
 
