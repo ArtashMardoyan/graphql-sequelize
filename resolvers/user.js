@@ -1,6 +1,8 @@
 'use strict';
 
-const { User } = require('../data/models');
+const _ = require('lodash');
+
+const { Location, User, sequelize } = require('../data/models');
 
 module.exports = {
     Query: {
@@ -12,6 +14,19 @@ module.exports = {
         }
     },
     Mutation: {
-        createUser: (parent, args) => User.create(args)
+        createUser: async (parent, args) => {
+            const userFields = ['email', 'password', 'firstName', 'lastName'];
+            const { location } = args;
+
+            return sequelize.transaction(async transaction => {
+                const model = await User.create(_.pick(args, userFields), { transaction });
+
+                if (!_.isEmpty(location)) {
+                    model.location = await Location.create({ userId: model.id, ...location }, { transaction });
+                }
+
+                return model;
+            });
+        }
     }
 };

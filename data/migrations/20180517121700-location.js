@@ -16,13 +16,10 @@ module.exports = {
                     key: 'id'
                 }
             },
+            city: {
+                type: Sequelize.STRING
+            },
             country: {
-                type: Sequelize.STRING
-            },
-            zipCode: {
-                type: Sequelize.STRING
-            },
-            address: {
                 type: Sequelize.STRING
             },
             latitude: {

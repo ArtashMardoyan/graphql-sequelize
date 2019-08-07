@@ -9,6 +9,9 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.UUID,
                 defaultValue: DataTypes.UUIDV4
             },
+            city: {
+                type: DataTypes.STRING
+            },
             country: {
                 type: DataTypes.STRING
             },
@@ -17,12 +20,6 @@ module.exports = (sequelize, DataTypes) => {
             },
             longitude: {
                 type: DataTypes.DECIMAL(9, 6)
-            },
-            address: {
-                type: DataTypes.STRING
-            },
-            zipCode: {
-                type: DataTypes.STRING
             }
         },
         {

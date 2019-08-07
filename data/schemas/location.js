@@ -2,15 +2,14 @@
 
 module.exports = `
   type Location {
-    id: String!
-    userId: User!
-    address: String!
-    country: String!
-    zipCode: String!
-    latitude: String!
-    longitude: String!
-    createdAt: String!
-    updatedAt: String!
+    id: ID
+    userId: User
+    city: String
+    country: String
+    latitude: String
+    longitude: String
+    createdAt: String
+    updatedAt: String
   }
    type Query {
     getLocation(id: Int!): Location!
@@ -18,11 +17,10 @@ module.exports = `
   }
   type Mutation {
     createLocation(
-       address: String!
+       city: String!
        country: String!
-       zipCode: String!
-       latitude: String!
-       longitude: String!
+       latitude: String
+       longitude: String
     ): Location!
   }
 `;

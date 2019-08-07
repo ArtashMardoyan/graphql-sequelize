@@ -16,19 +16,12 @@ const schema = makeExecutableSchema({ typeDefs, resolvers });
 
 const app = express();
 
-const graphqlEndpoint = '/graphql';
+const endpointURL = '/graphql';
 const port = config.get('PORT');
 
-app.use(
-    graphqlEndpoint,
-    bodyParser.json(),
-    graphqlExpress({
-        schema,
-        ctx: { user: { id: 1 } }
-    })
-);
+app.use(endpointURL, bodyParser.json(), graphqlExpress({ schema, ctx: { user: { id: 1 } } }));
 
-app.use('/graphiql', graphiqlExpress({ endpointURL: graphqlEndpoint }));
+app.use('/graphiql', graphiqlExpress({ endpointURL }));
 
 console.info(`Server is running on port : ${port}`);
 app.listen(port);

@@ -11,17 +11,6 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.UUID,
                 defaultValue: DataTypes.UUIDV4
             },
-            username: {
-                allowNull: false,
-                type: DataTypes.STRING(50),
-                validate: {
-                    len: [2, 50],
-                    is: /^[a-zA-Z0-9-_']+$/i
-                },
-                unique: {
-                    message: 'username.unique'
-                }
-            },
             lastName: {
                 type: DataTypes.STRING(50),
                 validate: { len: [2, 50] }
@@ -40,10 +29,10 @@ module.exports = (sequelize, DataTypes) => {
                     isEmail: true
                 }
             },
-            avatar: {
+            cover: {
                 type: DataTypes.STRING
             },
-            cover: {
+            avatar: {
                 type: DataTypes.STRING
             },
             password: {

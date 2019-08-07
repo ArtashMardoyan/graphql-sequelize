@@ -6,7 +6,6 @@
         "email",
         "cover",
         "avatar",
-        "username",
         "firstName",
         "lastName",
         "createdAt",
@@ -14,9 +13,8 @@
       ],
       "locationFields": [
         "id",
+        "city",
         "country",
-        "address",
-        "zipCode",
         "latitude",
         "longitude",
         "createdAt",

@@ -1,30 +1,36 @@
 'use strict';
 
 module.exports = `
+  input LocationInput {
+   city: String!
+   country: String!
+   latitude: String
+   longitude: String
+  }
   type User {
-    id: String!
+    id: ID!
     email: String!
-    cover: String!
-    avatar: String!
-    username: String!
+    cover: String
+    avatar: String
     lastName: String!
     firstName: String!
+    createdAt: String
+    updatedAt: String
     location: Location
-    createdAt: String!
-    updatedAt: String!
   }
   type Query {
-    getUser(id: Int!): User!
+    getUser(id: String!): User!
     getUsers: [User!]!
   }
   type Mutation {
     createUser(
-       email: String!, 
-       cover: String!
-       avatar: String!
-       username: String!, 
-       firstName:String!,
-       password: String!,
+       email: String!
+       cover: String
+       avatar: String
+       password: String!
+       lastName: String!
+       firstName: String!
+       location: LocationInput
     ): User!
   }
 `;

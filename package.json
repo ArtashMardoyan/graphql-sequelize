@@ -29,7 +29,7 @@
     "faker": "^4.1.0",
     "graphql": "^0.11.7",
     "graphql-tools": "^2.2.1",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "merge-graphql-schemas": "^1.1.4",
     "nconf": "^0.10.0",
     "pg": "^7.10.0",

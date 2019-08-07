@@ -7,11 +7,6 @@ module.exports = {
                 primaryKey: true,
                 type: Sequelize.UUID
             },
-            username: {
-                unique: true,
-                allowNull: false,
-                type: Sequelize.STRING
-            },
             firstName: {
                 type: Sequelize.STRING(50)
             },
@@ -42,8 +37,6 @@ module.exports = {
                 type: Sequelize.DATE
             }
         });
-
-        await queryInterface.addIndex('user', ['username', 'firstName', 'lastName', 'createdAt']);
     },
 
     async down(queryInterface) {
