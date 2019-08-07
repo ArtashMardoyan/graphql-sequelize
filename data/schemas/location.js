@@ -13,7 +13,7 @@ module.exports = `
   }
    type Query {
     getLocation(id: Int!): Location!
-    getLocations: [User!]!
+    getLocations: [Location!]!
   }
   type Mutation {
     createLocation(

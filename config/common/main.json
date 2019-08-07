@@ -1,4 +1,10 @@
 {
+  "request": {
+    "limit": {
+      "min": 3,
+      "max": 100
+    }
+  },
   "requiredEnvironment": [
     "PORT",
     "RDS_HOST",
