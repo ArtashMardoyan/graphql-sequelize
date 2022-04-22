@@ -31,7 +31,7 @@
     "koa": "^2.7.0",
     "lodash": "^4.17.11",
     "merge-graphql-schemas": "^1.7.0",
-    "nconf": "^0.10.0",
+    "nconf": "^0.11.4",
     "pg": "^7.10.0",
     "prettier": "^1.12.1",
     "randomstring": "^1.1.5",
